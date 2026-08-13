@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Curso de Claude · Javier Ponce — RK by realmark</title>
+<meta name="description" content="Curso completo de Claude para el equipo de RK by realmark: fundamentos, comandos, entornos en la nube, automatización y recursos en vídeo.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+  crossorigin="anonymous" referrerpolicy="no-referrer">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero-section" id="heroPage">
+  <div class="hero-frame">
+    <video class="hero-video" autoplay loop muted playsinline>
+      <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4" type="video/mp4">
+    </video>
+    <div class="noise-overlay"></div>
+    <div class="hero-gradient"></div>
+
+    <!-- Navbar pill -->
+    <nav class="navbar-pill anim-drop" style="--d:0.1s">
+      <a href="#" class="nav-item" onclick="jumpToModule(0)">Fundamentos</a>
+      <a href="#" class="nav-item" onclick="jumpToModule(3)">Comandos</a>
+      <a href="#" class="nav-item" onclick="jumpToModule(6)">Entornos</a>
+      <a href="#" class="nav-item" onclick="jumpToModule(8)">Vídeos</a>
+      <a href="#" class="nav-item" onclick="jumpToModule(9)">Aplicación RK</a>
+    </nav>
+
+    <!-- Hero content -->
+    <div class="hero-content">
+      <div class="hero-grid">
+        <h1 class="hero-title" id="pullTitle" data-asterisk="true">Curso de Claude</h1>
+        <div class="hero-side">
+          <p class="hero-desc anim-up" style="--d:0.5s">
+            Formación completa para que el equipo de <strong>RK by realmark</strong> domine Claude: desde los fundamentos hasta los entornos de equipo en la nube, la automatización con N8N y una biblioteca curada de vídeos en castellano.
+          </p>
+          <button class="cta-pill anim-up" style="--d:0.7s" onclick="scrollToCourse()">
+            <span>Comenzar el curso</span>
+            <span class="cta-circle"><i class="fa-solid fa-arrow-right"></i></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ ABOUT / INTRO ═══════════════════════════ -->
+<section class="about-section">
+  <div class="about-card">
+    <span class="about-label">Formación interna · Javier Ponce</span>
+    <h2 class="about-heading" id="aboutHeading">
+      <span class="seg" data-style="normal">Este curso te lleva de cero</span>
+      <span class="seg" data-style="serif">a usar Claude con criterio real</span>
+      <span class="seg" data-style="normal">en el trabajo diario de la agencia.</span>
+    </h2>
+    <p class="about-body" id="scrollText">Diez módulos, comandos completos, los tres modos de edición explicados con cuidado, la diferencia entre API y MCP, automatización con N8N, todo lo que necesitas saber sobre entornos en la nube para trabajar en equipo, y una biblioteca de diecisiete vídeos en castellano organizados por nivel.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════ COURSE ═══════════════════════════ -->
+<section class="course-page" id="coursePage">
+  <div class="course-layout">
+
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-logo">Curso de Claude</span>
+        <span class="sidebar-sub">Javier Ponce · RK by realmark</span>
+        <div class="progress-wrap">
+          <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+          <span class="progress-label" id="progressLabel">0%</span>
+        </div>
+      </div>
+      <nav class="module-nav-list">
+        <div class="nav-group-label">Fundamentos</div>
+        <button class="mod-nav active" onclick="gotoModule(0)"><span class="mod-num">01</span>¿Qué es Claude?</button>
+        <button class="mod-nav" onclick="gotoModule(1)"><span class="mod-num">02</span>Interfaces y superficies</button>
+        <button class="mod-nav" onclick="gotoModule(2)"><span class="mod-num">03</span>Modos de edición</button>
+        <button class="mod-nav" onclick="gotoModule(3)"><span class="mod-num">04</span>Comandos completos</button>
+        <div class="nav-group-label">Técnico</div>
+        <button class="mod-nav" onclick="gotoModule(4)"><span class="mod-num">05</span>API vs MCP</button>
+        <button class="mod-nav" onclick="gotoModule(5)"><span class="mod-num">06</span>N8N + Automatización</button>
+        <div class="nav-group-label">Equipo en la Nube</div>
+        <button class="mod-nav" onclick="gotoModule(6)"><span class="mod-num">07</span>Entornos en la nube</button>
+        <button class="mod-nav" onclick="gotoModule(7)"><span class="mod-num">08</span>Entornos compartidos</button>
+        <div class="nav-group-label">Recursos</div>
+        <button class="mod-nav" onclick="gotoModule(8)"><span class="mod-num">09</span>Vídeos de formación</button>
+        <button class="mod-nav" onclick="gotoModule(9)"><span class="mod-num">10</span>Aplicación en RK</button>
+      </nav>
+      <button class="back-hero" onclick="scrollToHero()">← Volver al inicio</button>
+    </aside>
+
+    <div class="module-content" id="moduleContent">
+
+      <!-- ═══ MÓDULO 0 ═══ -->
+      <section class="module-section active" id="mod0">
+        <div class="mod-header">
+          <span class="mod-tag">Módulo 01 · Fundamentos</span>
+          <h2 class="mod-title">¿Qué es Claude?</h2>
+          <p class="mod-intro">La base que necesitas antes de empezar. Entender bien qué es Claude —y qué no es— te va a ahorrar muchos malentendidos en el día a día.</p>
+        </div>
+
+        <div class="content-block">
+          <h3>Claude es un asistente de IA de Anthropic</h3>
+          <p>Claude es un <strong>modelo de lenguaje grande (LLM)</strong> creado por Anthropic, una empresa fundada por antiguos investigadores de OpenAI centrada explícitamente en la seguridad de la IA. A diferencia de un buscador, Claude <em>entiende el contexto</em>, razona sobre lo que le pides, redacta, analiza documentos completos y puede ejecutar tareas complejas de forma autónoma cuando se le dan las herramientas adecuadas.</p>
+          <p>Lo importante no es memorizar definiciones técnicas, sino entender el modelo mental correcto: Claude es más parecido a un compañero de trabajo muy leído y muy rápido que a un motor de búsqueda. No "sabe" cosas en tiempo real salvo que se lo permitas explícitamente (por ejemplo, dándole acceso a búsqueda web o a tus documentos).</p>
+
+          <div class="card-row three">
+            <div class="info-card"><div class="card-ico">💬</div><h4>No es un buscador</h4><p>Razona a partir de su entrenamiento y del contexto que tú le das. No indexa la web en tiempo real salvo que uses la herramienta de búsqueda.</p></div>
+            <div class="info-card"><div class="card-ico">🧠</div><h4>Entiende el contexto</h4><p>Recuerda todo lo que ha pasado en la conversación actual y puede trabajar con documentos largos, PDFs, hojas de cálculo, imágenes.</p></div>
+            <div class="info-card"><div class="card-ico">🤖</div><h4>Puede actuar</h4><p>Con herramientas (MCP, Claude Code, Cowork) puede leer archivos, navegar la web, enviar emails, editar documentos y ejecutar código.</p></div>
+            <div class="info-card"><div class="card-ico">🏢</div><h4>Seguro para empresas</h4><p>Anthropic diseñó Claude con la seguridad y la privacidad corporativa como prioridad de diseño, no como un añadido posterior.</p></div>
+            <div class="info-card"><div class="card-ico">🖼️</div><h4>Multimodal</h4><p>Puede leer imágenes, capturas de pantalla, PDFs escaneados y documentos de Office directamente, sin conversión previa.</p></div>
+            <div class="info-card"><div class="card-ico">🔁</div><h4>Iterativo</h4><p>No hace falta el prompt perfecto a la primera. Se corrige y refina la respuesta dentro de la misma conversación.</p></div>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h3>La familia de modelos: Haiku, Sonnet y Opus</h3>
+          <p>Anthropic ofrece tres familias de modelos con distintas capacidades, velocidades y costes. Elegir el modelo correcto para cada tarea es una de las decisiones más rentables que puedes tomar en el uso diario.</p>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Modelo</th><th>Para qué sirve</th><th>Velocidad</th><th>Coste relativo</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Claude Haiku</strong></td><td>Tareas rápidas, resúmenes cortos, clasificación de texto, chatbots de alto volumen</td><td><span class="badge green">Muy rápido</span></td><td>Bajo</td></tr>
+                <tr><td><strong>Claude Sonnet</strong></td><td>Equilibrio ideal: redacción avanzada, análisis, código, uso diario profesional</td><td><span class="badge blue">Rápido</span></td><td>Medio</td></tr>
+                <tr><td><strong>Claude Opus</strong></td><td>Razonamiento complejo, estrategia, arquitectura, decisiones de alta importancia</td><td><span class="badge purple">Potente</span></td><td>Alto</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout amber">💡 <strong>Para RK by realmark:</strong> en el día a día, Claude Sonnet cubre el 95% de los casos: redactar fichas, responder emails, analizar un contrato. Usa Opus solo cuando necesites razonamiento muy profundo —por ejemplo, un análisis de inversión con múltiples variables o una decisión estratégica de expansión.</div>
+        </div>
+
+        <div class="content-block">
+          <h3>Concepto clave: la ventana de contexto</h3>
+          <p>Claude trabaja dentro de una <strong>ventana de contexto</strong> — una memoria de trabajo de la sesión actual. Todo lo que le dices, los archivos que adjuntas, las respuestas que da, los resultados de herramientas que usa... todo va llenando esa ventana. Cuando se llena, Claude empieza a resumir o "olvidar" lo más antiguo.</p>
+          <p>Piensa en ello como la mesa de trabajo de un compañero: cuanto más papeles pones encima, más difícil es encontrar algo concreto, y en algún momento hay que archivar lo viejo para seguir trabajando con comodidad.</p>
+          <div class="callout red">⚠️ <strong>Importante:</strong> Claude <em>no recuerda sesiones anteriores</em> por defecto. Cada conversación nueva empieza desde cero, a menos que uses archivos de memoria persistente como <code>CLAUDE.md</code> o la función de memoria automática de Claude Code.</div>
+        </div>
+
+        <div class="content-block">
+          <h3>Lo que Claude NO es</h3>
+          <ul class="checklist-neg">
+            <li>No es infalible: puede cometer errores factuales ("alucinar"), especialmente en datos muy concretos o recientes. Siempre conviene verificar cifras y nombres propios importantes.</li>
+            <li>No tiene acceso a internet en tiempo real salvo que actives explícitamente la búsqueda web.</li>
+            <li>No "recuerda" tu empresa entre sesiones a menos que se lo digas de forma persistente (CLAUDE.md, memoria automática, o repitiéndolo en cada conversación).</li>
+            <li>No sustituye el criterio profesional de un agente inmobiliario — es una herramienta que multiplica su tiempo, no que lo reemplaza.</li>
+          </ul>
+        </div>
+
+        <div class="quiz-block" id="q0">
+          <div class="quiz-q">🧪 ¿Qué ocurre cuando cierras una sesión de Claude y abres una nueva?</div>
+          <div class="quiz-opts">
+            <button class="qopt" onclick="doQuiz('q0',this,'wrong')">Claude recuerda todo automáticamente</button>
+            <button class="qopt" onclick="doQuiz('q0',this,'correct')">Empieza desde cero, sin memoria de la sesión anterior</button>
+            <button class="qopt" onclick="doQuiz('q0',this,'wrong')">Guarda el contexto durante 24 horas</button>
+          </div>
+          <div class="quiz-fb" id="q0-fb"></div>
+        </div>
+
+        <div class="mod-footer-nav"><div></div><button class="btn-next" onclick="gotoModule(1)">Siguiente: Interfaces →</button></div>
+      </section>
+
+      <!-- ═══ MÓDULO 1 ═══ -->
+      <section class="module-section" id="mod1">
+        <div class="mod-header">
+          <span class="mod-tag">Módulo 02 · Fundamentos</span>
+          <h2 class="mod-title">Interfaces y superficies</h2>
+          <p class="mod-intro">Claude no es solo una web. Tiene múltiples formas de acceso, cada una pensada para un tipo de trabajo distinto.</p>
+        </div>
+
+        <div class="content-block">
+          <h3>Las superficies principales</h3>
+          <div class="card-row three">
+            <div class="info-card"><div class="card-ico">🌐</div><h4>Claude.ai (web)</h4><p>El chat de siempre. Para tareas del día a día: redacción, análisis, preguntas. La más accesible para todo el equipo.</p></div>
+            <div class="info-card"><div class="card-ico">💻</div><h4>App de escritorio</h4><p>Cowork integrado. Sesiones en paralelo, revisión visual de cambios y tareas programadas. La más potente para oficina.</p></div>
+            <div class="info-card"><div class="card-ico">📱</div><h4>App móvil</h4><p>iOS y Android. Lanza tareas en la nube y revísalas desde el móvil mientras estás en una visita.</p></div>
+            <div class="info-card"><div class="card-ico">⌨️</div><h4>Claude Code (CLI)</h4><p>Terminal para tareas técnicas. Máxima autonomía: lee código, edita archivos, ejecuta comandos del sistema.</p></div>
+            <div class="info-card"><div class="card-ico">🔌</div><h4>API / MCP</h4><p>Para integraciones programáticas. Conecta Claude a tus propias apps, CRM, portales inmobiliarios, bases de datos.</p></div>
+            <div class="info-card"><div class="card-ico">💬</div><h4>Claude Tag (Slack)</h4><p>Menciona <code>@Claude</code> en Slack y obtén respuestas directamente en el canal del equipo, sin salir del chat.</p></div>
+            <div class="info-card"><div class="card-ico">🧩</div><h4>Extensiones IDE</h4><p>VS Code, Cursor, JetBrains. Pensado para programadores que quieren a Claude dentro de su editor de código.</p></div>
+            <div class="info-card"><div class="card-ico">🌍</div><h4>claude.ai/code</h4><p>Ejecuta tareas de código directamente en el navegador, sin instalar nada, usando entornos en la nube.</p></div>
+            <div class="info-card"><div class="card-ico">🎮</div><h4>Remote Control</h4><p>Controla una sesión que corre en tu propio ordenador desde el móvil o el navegador, sin perder el contexto local.</p></div>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h3>¿Qué superficie para cada caso en RK?</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Situación</th><th>Superficie recomendada</th></tr></thead>
+              <tbody>
+                <tr><td>Redactar descripción de un inmueble</td><td><span class="badge green">Claude.ai web o app escritorio</span></td></tr>
+                <tr><td>Revisar y responder emails de clientes</td><td><span class="badge green">Cowork + Gmail MCP</span></td></tr>
+                <tr><td>Tarea larga que revisarás más tarde</td><td><span class="badge blue">Sesión en la nube (claude.ai/code)</span></td></tr>
+                <tr><td>Automatizar flujos de captación</td><td><span class="badge purple">API + N8N</span></td></tr>
+                <tr><td>Consulta rápida desde una visita a un inmueble</td><td><span class="badge amber">App móvil</span></td></tr>
+                <tr><td>Preguntar algo al equipo sin salir de Slack</td><td><span class="badge blue">Claude Tag</span></td></tr>
+                <tr><td>Construir una web o landing con código</td><td><span class="badge purple">Claude Code / Cowork</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout green">🏡 <strong>Tip para la agencia:</strong> la app de escritorio con Cowork es la más potente para el trabajo diario de oficina. Permite tener varias sesiones abiertas a la vez — una redactando fichas, otra analizando el mercado, otra gestionando emails — todo en paralelo.</div>
+        </div>
+
+        <div class="mod-footer-nav"><button class="btn-prev" onclick="gotoModule(0)">← Anterior</button><button class="btn-next" onclick="gotoModule(2)">Siguiente: Modos de edición →</button></div>
+      </section>
+
+      <!-- ═══ MÓDULO 2 ═══ -->
+      <section class="module-section" id="mod2">
+        <div class="mod-header">
+          <span class="mod-tag">Módulo 03 · Fundamentos</span>
+          <h2 class="mod-title">Modos de edición en Claude Code</h2>
+          <p class="mod-intro">Uno de los conceptos más importantes del curso: cómo controlar cuánta autonomía tiene Claude cuando trabaja con tus archivos y tu sistema.</p>
+        </div>
+
+        <div class="content-block">
+          <h3>Cambiar entre modos: <code>Shift + Tab</code></h3>
+          <p>En Claude Code puedes ciclar entre cuatro modos pulsando <code>Shift + Tab</code>. Cada modo define cuánto puede hacer Claude sin pedirte permiso explícito. Elegir el modo correcto es una decisión de seguridad, no solo de comodidad.</p>
+
+          <div class="modes-grid">
+            <div class="mode-card manual"><div class="mode-label">Manual</div><div class="mode-desc">Pregunta antes de <strong>cada</strong> edición de archivo y <strong>cada</strong> comando de terminal. El modo más seguro y el más lento.</div><div class="mode-when">✓ Para aprender, o en proyectos críticos donde cada cambio importa</div></div>
+            <div class="mode-card accept"><div class="mode-label">Accept edits</div><div class="mode-desc">Edita archivos y ejecuta comandos básicos del sistema (mkdir, mv) sin preguntar. Sigue pidiendo permiso para acciones más avanzadas.</div><div class="mode-when">✓ Uso diario habitual. ⚠️ Ojo con los botones de la barra inferior de la caja de texto</div></div>
+            <div class="mode-card plan"><div class="mode-label">Plan</div><div class="mode-desc">Solo explora y analiza el proyecto, y propone un plan de acción. <strong>No toca absolutamente nada.</strong></div><div class="mode-when">✓ Antes de hacer cambios grandes: entender primero, actuar después</div></div>
+            <div class="mode-card auto"><div class="mode-label">Auto</div><div class="mode-desc">Evalúa todas las acciones con comprobaciones de seguridad automáticas en segundo plano. Máxima autonomía.</div><div class="mode-when">✓ Tareas largas en las que confías plenamente en el criterio de Claude</div></div>
+          </div>
+
+          <div class="callout red">⚠️ <strong>Aviso importante del curso (Javier Ponce):</strong> En el modo <em>Accept edits</em> y especialmente al usar <code>/loop</code>, los botones de aceptar cambios aparecen en la <strong>parte inferior de la caja de texto</strong>. Es muy fácil aceptar sin darte cuenta si estás escribiendo rápido. Revisa siempre el contenido antes de hacer clic, sobre todo en sesiones largas y automatizadas.</div>
+        </div>
+
+        <div class="content-block">
+          <h3>Checkpoints: tu red de seguridad</h3>
+          <p>Antes de que Claude edite un archivo, hace automáticamente una copia del contenido anterior. Si algo sale mal, puedes pulsar <code>Esc</code> dos veces para deshacer el cambio, o simplemente pedirle a Claude que lo revierta.</p>
+          <div class="callout blue">💡 Los checkpoints son independientes de git y funcionan incluso si reanudas la conversación más tarde. Ojo: solo cubren cambios de archivos — acciones con efectos externos (bases de datos, publicaciones en un portal, envío de emails) no se pueden deshacer así, por eso Claude siempre pide confirmación antes de ese tipo de acciones.</div>
+        </div>
+
+        <div class="quiz-block" id="q2">
+          <div class="quiz-q">🧪 Quieres que Claude analice el código y te proponga un plan antes de tocar nada. ¿Qué modo usas?</div>
+          <div class="quiz-opts">
+            <button class="qopt" onclick="doQuiz('q2',this,'wrong')">Auto</button>
+            <button class="qopt" onclick="doQuiz('q2',this,'correct')">Plan</button>
+            <button class="qopt" onclick="doQuiz('q2',this,'wrong')">Accept edits</button>
+          </div>
+          <div class="quiz-fb" id="q2-fb"></div>
+        </div>
+
+        <div class="mod-footer-nav"><button class="btn-prev" onclick="gotoModule(1)">← Anterior</button><button class="btn-next" onclick="gotoModule(3)">Siguiente: Comandos completos →</button></div>
+      </section>
+
+      <!-- ═══ MÓDULO 3 ═══ -->
+      <section class="module-section" id="mod3">
+        <div class="mod-header">
+          <span class="mod-tag">Módulo 04 · Fundamentos</span>
+          <h2 class="mod-title">Comandos completos</h2>
+          <p class="mod-intro">Referencia ampliada de slash commands, comandos de terminal y herramientas externas vistas en el curso.</p>
+        </div>
+
+        <div class="content-block">
+          <h3>Comandos de control de sesión y contexto</h3>
+          <div class="cmd-grid">
+            <div class="cmd-card"><div class="cmd-name">/compact</div><p>Comprime el historial para liberar espacio en la ventana de contexto. Puede llevar un foco:</p><code class="inline-code">/compact focus on los cambios de API</code></div>
+            <div class="cmd-card"><div class="cmd-name">/context</div><p>Muestra qué está ocupando espacio en el contexto ahora mismo. Úsalo antes de /compact para saber si hace falta.</p></div>
+            <div class="cmd-card"><div class="cmd-name">/clear</div><p>Limpia toda la conversación y empieza de cero, sin cerrar la sesión ni perder la configuración del proyecto.</p></div>
+            <div class="cmd-card"><div class="cmd-name">/model</div><p>Cambia entre Haiku, Sonnet y Opus durante la sesión, sin cerrar ni reabrir nada.</p></div>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h3>Comandos de automatización y objetivos</h3>
+          <div class="cmd-grid">
+            <div class="cmd-card"><div class="cmd-name">/loop</div><p>Modo de iteración continua. Claude repite una tarea en ciclos hasta cumplir una condición. <strong>⚠️ Ojo con los botones de aceptación en la barra inferior.</strong></p></div>
+            <div class="cmd-card"><div class="cmd-name">/goal</div><p>Define un objetivo persistente que Claude persigue durante toda la sesión, reevaluando su progreso en cada paso.</p></div>
+            <div class="cmd-card"><div class="cmd-name">/schedule</div><p>Crea una tarea programada (rutina) que se ejecuta en la nube de forma recurrente, aunque tu ordenador esté apagado.</p></div>
+            <div class="cmd-card"><div class="cmd-name">/remote-env</div><p>Elige el entorno en la nube por defecto para las sesiones que lances desde el terminal.</p></div>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h3>Comandos de configuración y proyecto</h3>
+          <div class="cmd-grid">
+            <div class="cmd-card"><div class="cmd-name">/init</div><p>Crea un <code>CLAUDE.md</code> para el proyecto con instrucciones persistentes que todo el equipo comparte.</p></div>
+            <div class="cmd-card"><div class="cmd-name">/doctor</div><p>Diagnostica problemas de instalación o configuración y ofrece arreglarlos automáticamente.</p></div>
+            <div class="cmd-card"><div class="cmd-name">/permissions</div><p>Gestiona qué comandos y acciones tiene Claude permitido ejecutar sin preguntar.</p></div>
+            <div class="cmd-card"><div class="cmd-name">/mcp</div><p>Muestra los servidores MCP conectados y cuánto contexto consume cada uno.</p></div>
+            <div class="cmd-card"><div class="cmd-name">/agents</div><p>Gestiona subagentes especializados que Claude puede invocar para tareas concretas dentro de la misma sesión.</p></div>
+            <div class="cmd-card"><div class="cmd-name">/hooks</div><p>Configura scripts que se ejecutan automáticamente antes o después de una acción de Claude (por ejemplo, formatear código tras cada edición).</p></div>
+            <div class="cmd-card"><div class="cmd-name">/cost</div><p>Muestra el consumo estimado de la sesión actual en tokens y coste aproximado.</p></div>
+            <div class="cmd-card"><div class="cmd-name">/bug</div><p>Reporta un problema directamente a Anthropic desde la propia sesión de Claude Code.</p></div>
+            <div class="cmd-card"><div class="cmd-name">/desktop</div><p>Continúa tu sesión de terminal en la app de escritorio, para revisar los cambios de forma visual.</p></div>
+            <div class="cmd-card"><div class="cmd-name">/branch</div><p>Crea una copia (fork) de la sesión actual con un nuevo ID, dejando la original intacta.</p></div>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h3>Comandos de terminal (fuera de la sesión)</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Comando</th><th>Qué hace</th></tr></thead>
+              <tbody>
+                <tr><td><code>claude</code></td><td>Inicia una sesión de Claude Code en la carpeta actual</td></tr>
+                <tr><td><code>claude --cloud</code></td><td>Lanza la sesión directamente en un entorno en la nube en lugar de en tu máquina</td></tr>
+                <tr><td><code>claude --continue</code></td><td>Reabre la última sesión y sigue añadiendo mensajes con el mismo ID</td></tr>
+                <tr><td><code>claude --resume</code></td><td>Abre un selector para elegir qué sesión anterior continuar</td></tr>
+                <tr><td><code>claude --model &lt;nombre&gt;</code></td><td>Arranca la sesión usando un modelo específico (Haiku, Sonnet, Opus)</td></tr>
+                <tr><td><code>claude --permission-mode &lt;modo&gt;</code></td><td>Arranca directamente en el modo de edición que elijas (manual, plan, etc.)</td></tr>
+                <tr><td><code>claude -p "instrucción"</code></td><td>Ejecuta una instrucción puntual sin abrir modo conversación interactivo. Ideal para scripts y pipes</td></tr>
+                <tr><td><code>claude mcp add --scope project</code></td><td>Añade un servidor MCP al proyecto, compartido con todo el equipo vía git</td></tr>
+                <tr><td><code>claude --teleport</code></td><td>Trae al terminal una sesión que empezaste en la web o el móvil</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout blue">💡 <strong>Tip de productividad:</strong> puedes encadenar Claude con otros comandos de Unix. Por ejemplo: <code>git diff main --name-only | claude -p "revisa estos archivos y busca problemas"</code></div>
+        </div>
+
+        <div class="content-block">
+          <h3>Herramientas externas vistas en el curso</h3>
+          <div class="tool-list">
+            <div class="tool-item"><span class="tool-icon">🌐</span><div><strong>motionsites.com</strong><p>Plantillas de web para usar directamente con Claude. Ideal para landing pages de inmuebles o microsites de campaña.</p></div></div>
+            <div class="tool-item"><span class="tool-icon">🚀</span><div><strong>vercel.app</strong><p>Plataforma para publicar webs generadas por Claude en minutos. Conecta tu repositorio de GitHub y despliega automáticamente con cada cambio.</p></div></div>
+            <div class="tool-item"><span class="tool-icon">⚙️</span><div><strong>n8n.io</strong><p>Automatización de flujos con IA. Conecta Claude a tu CRM, email, portales y más, sin necesidad de código.</p></div></div>
+            <div class="tool-item"><span class="tool-icon">🛍️</span><div><strong>Skill Marketplace</strong><p>El marketplace de skills para ampliar las capacidades de Claude en Cowork. Instala skills específicas para tu sector.</p></div></div>
+            <div class="tool-item"><span class="tool-icon">🐙</span><div><strong>GitHub</strong><p>Donde vive el código de tus proyectos. Vercel se conecta a un repositorio de GitHub y despliega cada vez que haces un push.</p></div></div>
+          </div>
+        </div>
+
+        <div class="mod-footer-nav"><button class="btn-prev" onclick="gotoModule(2)">← Anterior</button><button class="btn-next" onclick="gotoModule(4)">Siguiente: API vs MCP →</button></div>
+      </section>
+
+      <!-- ═══ MÓDULO 4 ═══ -->
+      <section class="module-section" id="mod4">
+        <div class="mod-header">
+          <span class="mod-tag">Módulo 05 · Técnico</span>
+          <h2 class="mod-title">API vs MCP: la diferencia clave</h2>
+          <p class="mod-intro">Entender esta diferencia te ayudará a saber qué herramienta usar en cada situación, y a hablar con criterio con cualquier desarrollador que os ayude.</p>
+        </div>
+
+        <div class="content-block">
+          <div class="compare-row big">
+            <div class="compare-box">
+              <div class="compare-head">API — Application Programming Interface</div>
+              <p>Un <strong>contrato de comunicación</strong> entre dos sistemas. Se definen endpoints, métodos, parámetros y formatos de respuesta. Tú —o tu código— la llamas explícitamente, sabiendo de antemano qué vas a recibir.</p>
+              <div class="analogy-box">🍕 <strong>Analogía:</strong> llamar por teléfono a un restaurante. Marcas el número, pides siguiendo su menú, y ellos te dan exactamente eso. Tienes que saber el número y el menú.</div>
+              <ul class="feature-list">
+                <li>¿Quién la llama? <strong>Tu código, explícitamente</strong></li>
+                <li>¿Quién sabe usarla? <strong>El desarrollador</strong></li>
+                <li>Estándar: <strong>cada servicio tiene el suyo</strong></li>
+                <li>Uso típico: <strong>integración entre sistemas</strong></li>
+              </ul>
+            </div>
+            <div class="compare-box highlight">
+              <div class="compare-head">MCP — Model Context Protocol</div>
+              <p>Un <strong>protocolo estándar de Anthropic</strong> que permite a Claude conectarse a herramientas externas y usarlas por sí solo, sin que tengas que indicarle paso a paso cómo hacerlo.</p>
+              <div class="analogy-box">🏙️ <strong>Analogía:</strong> un asistente que ya conoce todos los restaurantes de la ciudad y va a buscar lo que necesitas sin que le expliques nada. Tú dices "tengo hambre de pizza" y él sabe a dónde ir.</div>
+              <ul class="feature-list">
+                <li>¿Quién la llama? <strong>Claude, de forma autónoma</strong></li>
+                <li>¿Quién sabe usarla? <strong>Claude la descubre sola</strong></li>
+                <li>Estándar: <strong>protocolo universal</strong></li>
+                <li>Uso típico: <strong>dar "superpoderes" a Claude</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout blue">🔗 <strong>Relación entre ambas:</strong> un servidor MCP por debajo usa APIs. El MCP de Vercel, por ejemplo, llama internamente a la API REST de Vercel — pero Claude no necesita saber nada de eso. El MCP es la capa que traduce las capacidades de una API al lenguaje que Claude entiende.</div>
+        </div>
+
+        <div class="content-block">
+          <h3>MCPs útiles para una agencia inmobiliaria</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>MCP</th><th>Para qué</th></tr></thead>
+              <tbody>
+                <tr><td>Gmail / Google Calendar</td><td>Leer y responder emails, gestionar citas con clientes</td></tr>
+                <tr><td>Google Drive</td><td>Buscar y editar documentos y hojas de cálculo compartidas</td></tr>
+                <tr><td>Vercel</td><td>Publicar y gestionar webs y landing pages generadas con Claude</td></tr>
+                <tr><td>Slack</td><td>Comunicación interna del equipo, alertas y consultas rápidas</td></tr>
+                <tr><td>Conectores personalizados (N8N)</td><td>CRM inmobiliario, portales de publicación, WhatsApp Business</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="mod-footer-nav"><button class="btn-prev" onclick="gotoModule(3)">← Anterior</button><button class="btn-next" onclick="gotoModule(5)">Siguiente: N8N →</button></div>
+      </section>
+
+      <!-- ═══ MÓDULO 5 ═══ -->
+      <section class="module-section" id="mod5">
+        <div class="mod-header">
+          <span class="mod-tag">Módulo 06 · Técnico</span>
+          <h2 class="mod-title">N8N + Automatización con Claude</h2>
+          <p class="mod-intro">N8N es la plataforma que convierte a Claude en el motor de tus automatizaciones de negocio, sin necesidad de programar.</p>
+        </div>
+
+        <div class="content-block">
+          <h3>¿Qué es N8N?</h3>
+          <p>N8N es una <strong>plataforma de automatización de flujos de trabajo visual</strong> — similar a Zapier o Make, pero más potente y con la opción de alojarla tú mismo. Conectas aplicaciones entre sí con un editor visual de nodos, sin apenas código.</p>
+          <p>Tiene integración nativa con Claude, lo que significa que puedes meter razonamiento de IA en medio de cualquier automatización: clasificar, redactar, decidir, resumir — todo dentro del flujo.</p>
+
+          <div class="flow-diagram">
+            <div class="flow-node trigger">DISPARADOR</div><div class="flow-arrow">→</div>
+            <div class="flow-node action">ACCIÓN 1</div><div class="flow-arrow">→</div>
+            <div class="flow-node claude">CLAUDE (IA)</div><div class="flow-arrow">→</div>
+            <div class="flow-node result">RESULTADO</div>
+          </div>
+          <p class="flow-example">Ejemplo: nuevo email en Gmail → Claude lo analiza → respuesta automática en Slack</p>
+        </div>
+
+        <div class="content-block">
+          <h3>Casos de uso para RK by realmark</h3>
+          <div class="usecase-grid">
+            <div class="usecase-card"><div class="usecase-cat">🎯 Captación y leads</div><ul><li>Formulario web → Claude clasifica el lead (comprador, vendedor, inversor) → CRM</li><li>Scraping de portales → Claude puntúa propiedades según criterios de clientes</li></ul></div>
+            <div class="usecase-card"><div class="usecase-cat">📧 Comunicación</div><ul><li>Email de cliente → Claude redacta respuesta personalizada → tú revisas y apruebas</li><li>WhatsApp Business → Claude responde consultas básicas fuera de horario</li></ul></div>
+            <div class="usecase-card"><div class="usecase-cat">📝 Contenido</div><ul><li>Nueva propiedad en CRM → Claude genera descripción → publicación automática en portales</li><li>Ficha de inmueble → Claude crea variaciones para redes sociales</li></ul></div>
+            <div class="usecase-card"><div class="usecase-cat">⚙️ Operaciones</div><ul><li>Reunión grabada → transcripción → Claude extrae próximos pasos → Asana/Notion</li><li>Cambio en un portal → Claude analiza y alerta al equipo por Slack</li></ul></div>
+          </div>
+          <div class="callout green">🚀 <strong>Por dónde empezar:</strong> n8n.io tiene versión cloud gratuita. El primer flujo útil: <em>email de contacto → Claude clasifica → notificación al agente</em>. En 30 minutos lo tienes montado.</div>
+        </div>
+
+        <div class="mod-footer-nav"><button class="btn-prev" onclick="gotoModule(4)">← Anterior</button><button class="btn-next" onclick="gotoModule(6)">Siguiente: Entornos en la nube →</button></div>
+      </section>
+
+      <!-- ═══ MÓDULO 6 ═══ -->
+      <section class="module-section" id="mod6">
+        <div class="mod-header">
+          <span class="mod-tag">Módulo 07 · Equipo en la Nube</span>
+          <h2 class="mod-title">Entornos en la nube</h2>
+          <p class="mod-intro">La base del trabajo en equipo con Claude. Entender qué es un entorno en la nube es el primer paso para que RK by realmark trabaje de forma colaborativa.</p>
+        </div>
+
+        <div class="content-block">
+          <h3>Sesión local vs sesión en la nube</h3>
+          <div class="compare-row">
+            <div class="compare-box"><div class="compare-head">💻 Sesión Local</div><ul class="feature-list"><li>Se ejecuta en <strong>tu ordenador</strong></li><li>Solo tú puedes verla</li><li>Se para cuando cierras el portátil</li><li>Accede a tus archivos locales</li><li>Sin configuración de entrada</li></ul></div>
+            <div class="compare-box highlight"><div class="compare-head">☁️ Sesión en la Nube</div><ul class="feature-list"><li>Se ejecuta en <strong>servidores de Anthropic</strong></li><li>Compartible con el equipo</li><li>Sigue corriendo aunque cierres el PC</li><li>Accede a repositorios de GitHub</li><li>Configurable por el administrador</li></ul></div>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h3>Cómo funciona una sesión en la nube</h3>
+          <div class="steps-list">
+            <div class="step-item"><span class="step-n">1</span><div><h4>Lanzas la sesión</h4><p>Desde claude.ai, app de escritorio, móvil o terminal (<code>claude --cloud</code>). Aparece un selector de entorno.</p></div></div>
+            <div class="step-item"><span class="step-n">2</span><div><h4>Se crea una máquina virtual</h4><p>Anthropic lanza un servidor Ubuntu 24.04 limpio con herramientas preinstaladas. No es tu ordenador.</p></div></div>
+            <div class="step-item"><span class="step-n">3</span><div><h4>Claude trabaja en ese servidor</h4><p>Accede a repositorios de GitHub, ejecuta código, instala paquetes — todo aislado y seguro.</p></div></div>
+            <div class="step-item"><span class="step-n">4</span><div><h4>Retomable desde cualquier dispositivo</h4><p>Empieza en el portátil, continúa desde el móvil, sin perder nada del progreso.</p></div></div>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h3>Niveles de acceso de red</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Nivel</th><th>Qué permite</th><th>Para qué</th></tr></thead>
+              <tbody>
+                <tr><td><strong>None</strong></td><td>Sin acceso a internet</td><td>Tareas internas aisladas</td></tr>
+                <tr><td><strong>Trusted ⭐</strong></td><td>Registros de paquetes, GitHub, SDKs comunes</td><td><strong>Punto de partida recomendado</strong></td></tr>
+                <tr><td><strong>Custom</strong></td><td>Lista de dominios que tú defines</td><td>Si necesitáis APIs propias (Idealista, etc.)</td></tr>
+                <tr><td><strong>Full</strong></td><td>Cualquier dominio</td><td>Solo si es imprescindible</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="callout red">🛡️ <strong>Sobre secretos:</strong> los entornos en la nube aún no tienen almacén de secretos dedicado. No pongas contraseñas ni API keys en las variables de entorno — cualquier miembro con acceso al entorno podría leerlas.</div>
+        </div>
+
+        <div class="quiz-block" id="q6">
+          <div class="quiz-q">🧪 Si cierras el portátil mientras una sesión en la nube está trabajando, ¿qué ocurre?</div>
+          <div class="quiz-opts">
+            <button class="qopt" onclick="doQuiz('q6',this,'wrong')">La sesión se para inmediatamente</button>
+            <button class="qopt" onclick="doQuiz('q6',this,'correct')">Sigue ejecutándose en los servidores de Anthropic</button>
+            <button class="qopt" onclick="doQuiz('q6',this,'wrong')">Hay que reanudarla manualmente al abrir el PC</button>
+          </div>
+          <div class="quiz-fb" id="q6-fb"></div>
+        </div>
+
+        <div class="mod-footer-nav"><button class="btn-prev" onclick="gotoModule(5)">← Anterior</button><button class="btn-next" onclick="gotoModule(7)">Siguiente: Entornos compartidos →</button></div>
+      </section>
+
+      <!-- ═══ MÓDULO 7 ═══ -->
+      <section class="module-section" id="mod7">
+        <div class="mod-header">
+          <span class="mod-tag">Módulo 08 · Equipo en la Nube · ⭐ Clave para RK</span>
+          <h2 class="mod-title">Entornos compartidos y autoalojados</h2>
+          <p class="mod-intro">La funcionalidad más importante para que todo el equipo de RK by realmark trabaje de forma unificada con Claude.</p>
+        </div>
+
+        <div class="content-block">
+          <h3>Entornos compartidos de organización</h3>
+          <p>Los <strong>entornos compartidos</strong> son entornos en la nube creados por el administrador que aparecen automáticamente en el selector de <em>todos los miembros del equipo</em>. En lugar de que cada persona configure el suyo, el admin crea uno estándar que todos comparten.</p>
+          <div class="callout green">✅ <strong>Disponible en planes Team y Enterprise.</strong> RK by realmark necesita uno de estos planes para crear entornos compartidos.</div>
+          <div class="card-row">
+            <div class="info-card"><div class="card-ico">🔄</div><h4>Configuración única</h4><p>El admin configura el entorno una vez. El equipo entero lo tiene disponible sin hacer nada.</p></div>
+            <div class="info-card"><div class="card-ico">📏</div><h4>Estándares unificados</h4><p>Todos los agentes trabajan con las mismas herramientas y accesos. Sin dispersión.</p></div>
+            <div class="info-card"><div class="card-ico">👀</div><h4>Control de acceso</h4><p>Solo Owners y Admins crean o editan entornos. Los miembros solo los usan.</p></div>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h3>Cómo crear el entorno compartido para RK</h3>
+          <div class="steps-list">
+            <div class="step-item"><span class="step-n">1</span><div><h4>Admin Settings → Cloud environments</h4><p>En claude.ai, solo Owners y Admins ven esta sección.</p></div></div>
+            <div class="step-item"><span class="step-n">2</span><div><h4>Crear el entorno</h4><p>Clic en "Add cloud environment". Nombre descriptivo: "RK Producción" o "Equipo Comercial".</p></div></div>
+            <div class="step-item"><span class="step-n">3</span><div><h4>Configurar acceso de red</h4><p>Elegir Trusted para empezar, o Custom si necesitáis acceder a APIs propias.</p></div></div>
+            <div class="step-item"><span class="step-n">4</span><div><h4>Script de inicio (opcional)</h4><p>Script Bash que se ejecuta antes de que Claude empiece. Instala herramientas propias de la agencia.</p></div></div>
+            <div class="step-item"><span class="step-n">5</span><div><h4>Establecer como entorno por defecto</h4><p>En Admin Settings → Claude Code. Todo el equipo lo usará automáticamente.</p></div></div>
+          </div>
+          <div class="callout purple">💬 <strong>Claude Tag en Slack:</strong> si usáis Claude Tag en Slack, las sesiones de Slack <em>solo</em> pueden usar entornos compartidos, no personales. Por eso es crucial tenerlos configurados.</div>
+        </div>
+
+        <div class="content-block">
+          <h3>Entornos autoalojados (Self-hosted)</h3>
+          <div class="callout amber">🔍 <strong>¿Es esto para RK by realmark?</strong> Probablemente no de inicio. Los entornos autoalojados son para empresas con requisitos muy específicos de seguridad o compliance. Para la mayoría de agencias, los entornos de Anthropic son suficientes y mucho más sencillos.</div>
+          <div class="compare-row">
+            <div class="compare-box"><div class="compare-head">☁️ Alojado por Anthropic</div><ul class="feature-list"><li>✅ Sin infraestructura que mantener</li><li>✅ Listo para usar inmediatamente</li><li>✅ Actualizaciones automáticas</li><li>⚠️ El código se procesa en servidores de Anthropic</li></ul></div>
+            <div class="compare-box"><div class="compare-head">🏢 Autoalojado</div><ul class="feature-list"><li>✅ El código nunca sale de tu red</li><li>✅ Acceso a servicios internos privados</li><li>⚠️ Requiere infraestructura propia</li><li>⚠️ Requiere equipo técnico para mantenerlo</li></ul></div>
+          </div>
+          <p>Disponible en beta pública para planes Team y Enterprise. Un Owner o Admin activa "Allow self-hosted environments" en Admin Settings → Cloud environments.</p>
+        </div>
+
+        <div class="mod-footer-nav"><button class="btn-prev" onclick="gotoModule(6)">← Anterior</button><button class="btn-next" onclick="gotoModule(8)">Siguiente: Vídeos de formación →</button></div>
+      </section>
+
+      <!-- ═══ MÓDULO 8 — VÍDEOS ═══ -->
+      <section class="module-section" id="mod8">
+        <div class="mod-header">
+          <span class="mod-tag">Módulo 09 · Recursos</span>
+          <h2 class="mod-title">Vídeos de formación en castellano</h2>
+          <p class="mod-intro">Biblioteca curada de 17 vídeos de 2026 para reforzar cada parte del curso, organizados por nivel. Haz clic en cualquier miniatura para reproducir.</p>
+        </div>
+
+        <div class="content-block">
+          <h3>Nivel principiante / uso general</h3>
+          <div class="video-grid" id="videosBeginner"></div>
+        </div>
+
+        <div class="content-block">
+          <h3>Nivel avanzado: Claude Code, agentes y MCP</h3>
+          <div class="video-grid" id="videosAdvanced"></div>
+        </div>
+
+        <div class="mod-footer-nav"><button class="btn-prev" onclick="gotoModule(7)">← Anterior</button><button class="btn-next" onclick="gotoModule(9)">Siguiente: Aplicación en RK →</button></div>
+      </section>
+
+      <!-- ═══ MÓDULO 9 ═══ -->
+      <section class="module-section" id="mod9">
+        <div class="mod-header">
+          <span class="mod-tag">Módulo 10 · Aplicación · Final</span>
+          <h2 class="mod-title">Claude en RK by realmark</h2>
+          <p class="mod-intro">Todo lo aprendido aplicado a la agencia. Aquí el curso se convierte en resultados reales.</p>
+        </div>
+
+        <div class="content-block">
+          <h3>Mapa de herramientas por necesidad</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Necesidad</th><th>Herramienta</th><th>Complejidad</th></tr></thead>
+              <tbody>
+                <tr><td>Redactar fichas de inmuebles</td><td>Claude.ai / Cowork</td><td><span class="badge green">Inmediato</span></td></tr>
+                <tr><td>Responder emails de clientes</td><td>Cowork + Gmail MCP</td><td><span class="badge green">Inmediato</span></td></tr>
+                <tr><td>Landing page de inmueble</td><td>motionsites.com + Claude + Vercel</td><td><span class="badge blue">Fácil</span></td></tr>
+                <tr><td>Todo el equipo con el mismo entorno</td><td>Entorno compartido (Team plan)</td><td><span class="badge blue">Fácil (admin)</span></td></tr>
+                <tr><td>Clasificar leads automáticamente</td><td>N8N + Claude API</td><td><span class="badge amber">Medio</span></td></tr>
+                <tr><td>Publicación automática en portales</td><td>N8N + API Idealista/Fotocasa</td><td><span class="badge amber">Medio</span></td></tr>
+                <tr><td>Tareas nocturnas y programadas</td><td>Routines (sesiones en la nube)</td><td><span class="badge blue">Fácil</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h3>Plan de acción recomendado</h3>
+          <div class="steps-list">
+            <div class="step-item"><span class="step-n">1</span><div><h4>Semana 1 — Uso individual</h4><p>Cada agente empieza a usar Claude.ai para redactar fichas y responder emails. Sin configuración, resultados inmediatos.</p></div></div>
+            <div class="step-item"><span class="step-n">2</span><div><h4>Semana 2-3 — Entorno compartido</h4><p>El administrador activa el plan Team, crea el entorno compartido "RK Producción" y lo establece como predeterminado.</p></div></div>
+            <div class="step-item"><span class="step-n">3</span><div><h4>Mes 2 — Primera automatización con N8N</h4><p>Email de captación → Claude clasifica → notificación al agente. Medible y de impacto directo.</p></div></div>
+            <div class="step-item"><span class="step-n">4</span><div><h4>Mes 3+ — Webs y publicación automática</h4><p>Usar motionsites.com + Vercel para microsites de inmuebles destacados. Explorar API de portales.</p></div></div>
+          </div>
+        </div>
+
+        <div class="content-block">
+          <h3>Glosario rápido del curso</h3>
+          <div class="glossary-grid">
+            <div class="gloss-item"><strong>API</strong><span>Comunicación entre sistemas. La llama el desarrollador con código.</span></div>
+            <div class="gloss-item"><strong>MCP</strong><span>Protocolo para que Claude use herramientas por sí solo.</span></div>
+            <div class="gloss-item"><strong>N8N</strong><span>Automatización visual. Conecta Claude a tus apps sin código.</span></div>
+            <div class="gloss-item"><strong>Contexto</strong><span>Memoria de trabajo de Claude en una sesión. Se llena.</span></div>
+            <div class="gloss-item"><strong>/compact</strong><span>Comprime el historial y libera espacio en el contexto.</span></div>
+            <div class="gloss-item"><strong>/loop</strong><span>Bucle iterativo. ⚠️ Ojo con botones en barra inferior.</span></div>
+            <div class="gloss-item"><strong>/goal</strong><span>Define un objetivo persistente para toda la sesión.</span></div>
+            <div class="gloss-item"><strong>Entorno nube</strong><span>Servidor remoto donde se ejecutan las sesiones de Claude.</span></div>
+            <div class="gloss-item"><strong>Entorno compartido</strong><span>Entorno creado por el admin disponible para todo el equipo.</span></div>
+            <div class="gloss-item"><strong>Runner</strong><span>Proceso en tu infraestructura (solo self-hosted).</span></div>
+            <div class="gloss-item"><strong>Vercel</strong><span>Publica webs de Claude en minutos desde GitHub.</span></div>
+            <div class="gloss-item"><strong>motionsites.com</strong><span>Plantillas de web listas para Claude.</span></div>
+          </div>
+        </div>
+
+        <div class="completion-banner">
+          <div class="completion-icon">🎓</div>
+          <h3>¡Curso completado!</h3>
+          <p>Ya tienes la base para implementar Claude en RK by realmark de forma estructurada. El siguiente paso: empieza por la Semana 1 del plan de acción.</p>
+          <button class="btn-next" onclick="gotoModule(0)">Repasar desde el principio →</button>
+        </div>
+
+        <div class="mod-footer-nav"><button class="btn-prev" onclick="gotoModule(8)">← Anterior</button><div></div></div>
+      </section>
+
+    </div>
+  </div>
+</section>
+
+<script src="main.js"></script>
+</body>
+</html>
